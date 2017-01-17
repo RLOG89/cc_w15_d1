@@ -1,6 +1,5 @@
 class ShowsController < ApplicationController
 
-
   def index
     @shows = Show.all
     render :json => @shows
@@ -13,7 +12,7 @@ class ShowsController < ApplicationController
 
   private
   def show_params
-    params.require(:show).permit([:title], [:series], [:description], [:image], [:programmeid])
+    params.require(:show).permit([:title, :series, :description, :image, :programmeid])
   end
 
 end
